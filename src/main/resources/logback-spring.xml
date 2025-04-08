@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+    <property name="moduleId" value="around_hub_spring_boot"/>
+    <property name="type" value="around_hub"/>
+    <property name="logback" value="logback"/>
+    <property name="logdir" value="D:\Workspace\LogFiles"/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <encoder>
+            <pattern>%green([%d{yyyy-MM-dd HH:mm:ss.SSS}]) %magenta([%-5level]) %highlight([%thread]) %cyan(%logger{30}) %yellow(%msg%n) </pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG"> <!-- DEBUG, INFO -->
+        <appender-ref ref="console" />
+    </root>
+</configuration>
