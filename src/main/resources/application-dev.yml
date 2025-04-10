@@ -67,19 +67,19 @@ springdoc:
   swagger-ui:
     urls[0]:
       name: Omni-BE-User
-      url: https://${HTTPS_GATEWAY_URL}/omni-be-user/v3/api-docs
+      url: ${HTTPS_GATEWAY_URL}/omni-be-user/v3/api-docs
     urls[1]:
       name: Omni-BE-Sponsor
-      url: https://${HTTPS_GATEWAY_URL}/omni-be-sponsor/v3/api-docs
+      url: ${HTTPS_GATEWAY_URL}/omni-be-sponsor/v3/api-docs
     urls[2]:
       name: Omni-BE-Payment
-      url: https://${HTTPS_GATEWAY_URL}/omni-be-payment/v3/api-docs
+      url: ${HTTPS_GATEWAY_URL}/omni-be-payment/v3/api-docs
     urls[3]:
       name: Omni-BE-Card
-      url: https://${HTTPS_GATEWAY_URL}/omni-be-card/v3/api-docs
+      url: ${HTTPS_GATEWAY_URL}/omni-be-card/v3/api-docs
     urls[4]:
       name: Omni-BE-File
-      url: https://${HTTPS_GATEWAY_URL}/omni-be-file/v3/api-docs
+      url: ${HTTPS_GATEWAY_URL}/omni-be-file/v3/api-docs
 #    urls[5]:
 #      name: Omni-BE-AI
 #      url:
