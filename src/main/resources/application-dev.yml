@@ -33,30 +33,30 @@ spring:
               - DELETE
               - OPTIONS
       routes:
-        - id: user-swagger-api-docs
+        - id: user-service
           uri: ${USER_SERVER_ADDRESS}
           predicates:
-            - Path=/omni-be-user/v3/api-docs
+            - Path=/user/**
 
-        - id: sponsor-swagger-api-docs
+        - id: sponsor-service
           uri: ${SPONSOR_SERVER_ADDRESS}
           predicates:
-            - Path=/omni-be-sponsor/v3/api-docs
+            - Path=/sponsor/**
 
-        - id: payment-swagger-api-docs
+        - id: payment-service
           uri: ${PAYMENT_SERVER_ADDRESS}
           predicates:
-            - Path=/omni-be-payment/v3/api-docs
+            - Path=/payment/**
 
-        - id: card-swagger-api-docs
+        - id: card-service
           uri: ${CARD_SERVER_ADDRESS}
           predicates:
-            - Path=/omni-be-card/v3/api-docs
+            - Path=/card/**
 
-        - id: file-swagger-api-docs
+        - id: file-service
           uri: ${FILE_SERVER_ADDRESS}
           predicates:
-            - Path=/omni-be-file/v3/api-docs
+            - Path=/file/**
 
 #        - id: ai-swagger-api-docs
 #          uri: ${AI_SERVER_ADDRESS}
@@ -67,19 +67,19 @@ springdoc:
   swagger-ui:
     urls[0]:
       name: Omni-BE-User
-      url: ${HTTPS_GATEWAY_URL}/omni-be-user/v3/api-docs
+      url: ${HTTPS_GATEWAY_URL}/user/v3/api-docs
     urls[1]:
       name: Omni-BE-Sponsor
-      url: ${HTTPS_GATEWAY_URL}/omni-be-sponsor/v3/api-docs
+      url: ${HTTPS_GATEWAY_URL}/sponsor/v3/api-docs
     urls[2]:
       name: Omni-BE-Payment
-      url: ${HTTPS_GATEWAY_URL}/omni-be-payment/v3/api-docs
+      url: ${HTTPS_GATEWAY_URL}/payment/v3/api-docs
     urls[3]:
       name: Omni-BE-Card
-      url: ${HTTPS_GATEWAY_URL}/omni-be-card/v3/api-docs
+      url: ${HTTPS_GATEWAY_URL}/card/v3/api-docs
     urls[4]:
       name: Omni-BE-File
-      url: ${HTTPS_GATEWAY_URL}/omni-be-file/v3/api-docs
+      url: ${HTTPS_GATEWAY_URL}/file/v3/api-docs
 #    urls[5]:
 #      name: Omni-BE-AI
 #      url:
