@@ -51,6 +51,7 @@ public class JWTGatewayFilter implements GlobalFilter, Ordered {
 
         ServerHttpRequest request = exchange.getRequest();
         String requestPath = request.getURI().getPath();
+        String method = request.getMethod() != null ? request.getMethod().name() : "";
 
         // OPTIONS 요청은 CORS preflight로 인증 없이 허용
         if ("OPTIONS".equalsIgnoreCase(request.getMethod().name())) {
@@ -59,7 +60,9 @@ public class JWTGatewayFilter implements GlobalFilter, Ordered {
 
         // 화이트리스트 패턴에 매칭되면 JWT 검증 없이 통과
         boolean isWhitelisted = WHITELIST_PATTERNS.stream()
-                .anyMatch(pattern -> matcher.match(pattern, requestPath));
+                .anyMatch(pattern -> matcher.match(pattern, requestPath))
+                || ("/sponsor/v1/categories".equals(requestPath) && "GET".equalsIgnoreCase(method));
+
         if (isWhitelisted) {
             return chain.filter(exchange);
         }
