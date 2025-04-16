@@ -57,6 +57,8 @@ spring:
           uri: ${FILE_SERVER_ADDRESS}
           predicates:
             - Path=/file/**
+  jwt:
+    secret: ${JWT_SECRET_KEY}
 
 #        - id: ai-swagger-api-docs
 #          uri: ${AI_SERVER_ADDRESS}
