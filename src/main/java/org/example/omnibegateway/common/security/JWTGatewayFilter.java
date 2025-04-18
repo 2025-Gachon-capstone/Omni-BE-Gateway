@@ -94,10 +94,10 @@ public class JWTGatewayFilter implements GlobalFilter, Ordered {
         }
 
         // 헤더에 loginId 추가
-        String loginId = jwtUtil.getLoginId(accessToken);
+        Long memberId = jwtUtil.getMemberId(accessToken);
         ServerHttpRequest mutatedRequest = exchange.getRequest()
                 .mutate()
-                .header("X-Authorization-Id", loginId)
+                .header("X-Authorization-Id", String.valueOf(memberId))
                 .build();
 
         return chain.filter(exchange.mutate().request(mutatedRequest).build());
