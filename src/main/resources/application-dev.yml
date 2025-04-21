@@ -11,6 +11,7 @@ spring:
             allowedOrigins:
               - ${HTTPS_GATEWAY_URL}
               - ${HTTPS_FRONT_URL}
+              - ${FRONT_URL}
             allow-credentials: true
             allowedHeaders:
               - x-requested-with
