@@ -61,7 +61,9 @@ public class JWTGatewayFilter implements GlobalFilter, Ordered {
         // 화이트리스트 패턴에 매칭되면 JWT 검증 없이 통과
         boolean isWhitelisted = WHITELIST_PATTERNS.stream()
                 .anyMatch(pattern -> matcher.match(pattern, requestPath))
-                || ("/sponsor/v1/categories".equals(requestPath) && "GET".equalsIgnoreCase(method));
+                || ("/sponsor/v1/categories".equals(requestPath) && "GET".equalsIgnoreCase(method))
+                || ("/sponsor/v1/products".equals(requestPath) && "GET".equalsIgnoreCase(method))
+                || (matcher.match("/sponsor/v1/products/*", requestPath) && "GET".equalsIgnoreCase(method));
 
         if (isWhitelisted) {
             return chain.filter(exchange);
