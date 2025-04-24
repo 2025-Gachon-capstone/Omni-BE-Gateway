@@ -87,5 +87,5 @@ springdoc:
       name: Omni-BE-File
       url: ${HTTPS_GATEWAY_URL}/file/v3/api-docs
     urls[5]:
-    name: Omni-BE-AI
-    url: ${HTTPS_GATEWAY_URL}/flask/v3/api-docs
+      name: Omni-BE-AI
+      url: ${HTTPS_GATEWAY_URL}/flask/v3/api-docs
