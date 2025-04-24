@@ -58,14 +58,16 @@ spring:
         - id: file-service
           uri: ${FILE_SERVER_ADDRESS}
           predicates:
-            - Path=/file/**
+            - Path=/file/**        
+
+        - id: ai-swagger-api-docs
+          uri: ${AI_SERVER_ADDRESS}
+          predicates:
+            - Path=/flask/**
+
   jwt:
     secret: ${JWT_SECRET_KEY}
 
-#        - id: ai-swagger-api-docs
-#          uri: ${AI_SERVER_ADDRESS}
-#          predicates:
-#            - Path=/omni-be-ai/v3/api-docs
 
 springdoc:
   swagger-ui:
@@ -84,6 +86,6 @@ springdoc:
     urls[4]:
       name: Omni-BE-File
       url: ${HTTPS_GATEWAY_URL}/file/v3/api-docs
-#    urls[5]:
-#      name: Omni-BE-AI
-#      url:
+    urls[5]:
+    name: Omni-BE-AI
+    url: ${HTTPS_GATEWAY_URL}/flask/v3/api-docs
