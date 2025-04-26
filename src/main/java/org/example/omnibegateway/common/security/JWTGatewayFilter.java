@@ -65,7 +65,8 @@ public class JWTGatewayFilter implements GlobalFilter, Ordered {
                 .anyMatch(pattern -> matcher.match(pattern, requestPath))
                 || ("/sponsor/v1/categories".equals(requestPath) && "GET".equalsIgnoreCase(method))
                 || ("/sponsor/v1/products".equals(requestPath) && "GET".equalsIgnoreCase(method))
-                || (matcher.match("/sponsor/v1/products/*", requestPath) && "GET".equalsIgnoreCase(method));
+                || (matcher.match("/sponsor/v1/products/*", requestPath) && "GET".equalsIgnoreCase(method))
+                || ("/sponsor/v1/productCategories".equals(requestPath) && "GET".equalsIgnoreCase(method));
 
         if (isWhitelisted) {
             return chain.filter(exchange);
