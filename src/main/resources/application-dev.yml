@@ -55,11 +55,6 @@ spring:
           predicates:
             - Path=/card/**
 
-        - id: file-service
-          uri: ${FILE_SERVER_ADDRESS}
-          predicates:
-            - Path=/file/**        
-
         - id: ai-swagger-api-docs
           uri: ${AI_SERVER_ADDRESS}
           predicates:
