@@ -41,7 +41,8 @@ public class JWTGatewayFilter implements GlobalFilter, Ordered {
             "/**/swagger-ui.html",
             "/**/webjars/**",
             "/card/v1/cardBenefits/check",
-            "/payment/v1/orders"
+            "/payment/v1/orders",
+            "/payment/v1/payments/confirm"
     );
 
     public JWTGatewayFilter(JWTUtil jwtUtil) {
