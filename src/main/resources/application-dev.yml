@@ -12,7 +12,6 @@ spring:
               - ${HTTPS_GATEWAY_URL}
               - ${HTTPS_FRONT_URL}
               - ${FRONT_URL}
-              - ${HTTPS_GATEWAY_SERVER_ADDRESS}
             allow-credentials: true
             allowedHeaders:
               - x-requested-with
@@ -86,7 +85,7 @@ springdoc:
       url: ${HTTPS_GATEWAY_URL}/card/v3/api-docs
     urls[4]:
       name: Omni-BE-File
-      url: ${HTTPS_GATEWAY_SERVER_ADDRESS}/file/v3/api-docs
+      url: ${HTTPS_GATEWAY_URL}/file/v3/api-docs
     urls[5]:
       name: Omni-BE-AI
       url: ${HTTPS_GATEWAY_URL}/flask/v3/api-docs
