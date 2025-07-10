@@ -42,7 +42,8 @@ public class JWTGatewayFilter implements GlobalFilter, Ordered {
             "/**/webjars/**",
             "/card/v1/cardBenefits/check",
             "/payment/v1/orders",
-            "/payment/v1/payments/confirm"
+            "/payment/v1/payments/confirm",
+            "/user/v1/memberBenefits/check"
     );
 
     public JWTGatewayFilter(JWTUtil jwtUtil) {
