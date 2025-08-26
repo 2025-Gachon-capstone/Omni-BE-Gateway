@@ -68,7 +68,6 @@ spring:
   jwt:
     secret: ${JWT_SECRET_KEY}
 
-
 springdoc:
   swagger-ui:
     urls[0]:
